@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语学习工具大全 | 分类指南</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --speaking: #FF6B6B;
+            --grammar: #4ECDC4;
+            --writing: #FFD166;
+            --listening: #118AB2;
+            --vocab: #6A4C93;
+            --reading: #06D6A0;
+            --accent: #073B4C;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-text {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, #ffd166, #06d6a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .category-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .speaking { border-top: 8px solid var(--speaking); }
+        .grammar { border-top: 8px solid var(--grammar); }
+        .writing { border-top: 8px solid var(--writing); }
+        .listening { border-top: 8px solid var(--listening); }
+        .vocab { border-top: 8px solid var(--vocab); }
+        .reading { border-top: 8px solid var(--reading); }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .speaking .icon { background: var(--speaking); }
+        .grammar .icon { background: var(--grammar); }
+        .writing .icon { background: var(--writing); }
+        .listening .icon { background: var(--listening); }
+        .vocab .icon { background: var(--vocab); }
+        .reading .icon { background: var(--reading); }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .speaking .category-title { color: var(--speaking); }
+        .grammar .category-title { color: var(--grammar); }
+        .writing .category-title { color: var(--writing); }
+        .listening .category-title { color: var(--listening); }
+        .vocab .category-title { color: var(--vocab); }
+        .reading .category-title { color: var(--reading); }
+        
+        .tool-list {
+            list-style: none;
+        }
+        
+        .tool-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tool-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .tool-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool-name i {
+            margin-right: 10px;
+        }
+        
+        .tool-desc {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .tool-link a {
+            display: inline-block;
+            color: #ffd166;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .tool-link a:hover {
+            color: #06d6a0;
+            text-decoration: underline;
+        }
+        
+        .conclusion {
+            max-width: 800px;
+            margin: 60px auto 0;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #ff5e62, #ff9966);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .conclusion h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .conclusion p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .highlight {
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: #073B4C;
+        }
+        
+        .motivation {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            font-style: italic;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .hero-text {
+                font-size: 1.4rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>英语学习工具大全</h1>
+            <p class="subtitle">发现最佳工具，助您征服英语！从口语流利到写作卓越，我们为您精选最有效的学习资源</p>
+            <div class="hero-text">
+                <i class="fas fa-bolt"></i> 掌握英语从未如此简单！探索按技能分类的顶级工具，点燃您的学习激情
+            </div>
+        </header>
+        
+        <div class="tools-grid">
+            <!-- 口语练习 -->
+            <div class="category-card speaking">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h2 class="category-title">口语练习</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-robot"></i>
+                            <span>ELSA Speak</span>
+                        </div>
+                        <div class="tool-desc">AI驱动的发音教练，提供即时反馈，纠正您的口音问题</div>
+                        <div class="tool-link"><a href="https://elsaspeak.com" target="_blank">elsaspeak.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-comments"></i>
+                            <span>Cambly</span>
+                        </div>
+                        <div class="tool-desc">与母语为英语的导师进行一对一视频对话练习</div>
+                        <div class="tool-link"><a href="https://www.cambly.com" target="_blank">cambly.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-wave-square"></i>
+                            <span>Speechling</span>
+                        </div>
+                        <div class="tool-desc">录音并获取专业教练的发音反馈</div>
+                        <div class="tool-link"><a href="https://speechling.com" target="_blank">speechling.com</a></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 语法改进 -->
+            <div class="category-card grammar">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h2 class="category-title">语法改进</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Grammarly</span>
+                        </div>
+                        <div class="tool-desc">实时检查语法错误并提供改进建议的AI写作助手</div>
+                        <div class="tool-link"><a href="https://www.grammarly.com" target="_blank">grammarly.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>English Grammar in Use App</span>
+                        </div>
+                        <div class="tool-desc">基于经典语法书的互动练习应用</div>
+                        <div class="tool-link"><a href="https://cambridge.org/grammarinuse" target="_blank">cambridge.org/grammarinuse</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Perfect English Grammar</span>
+                        </div>
+                        <div class="tool-desc">全面的语法指南和练习资源</div>
+                        <div class="tool-link"><a href="https://perfect-english-grammar.com" target="_blank">perfect-english-grammar.com</a></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 写作提升 -->
+            <div class="category-card writing">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h2 class="category-title">写作提升</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-feather-alt"></i>
+                            <span>ProWritingAid</span>
+                        </div>
+                        <div class="tool-desc">深度写作分析工具，检查风格、可读性和抄袭</div>
+                        <div class="tool-link"><a href="https://prowritingaid.com" target="_blank">prowritingaid.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-brain"></i>
+                            <span>Hemingway Editor</span>
+                        </div>
+                        <div class="tool-desc">高亮复杂句子和副词，让写作更简洁有力</div>
+                        <div class="tool-link"><a href="https://hemingwayapp.com" target="_blank">hemingwayapp.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-book-open"></i>
+                            <span>DeepSeek写作助手</span>
+                        </div>
+                        <div class="tool-desc">AI驱动的写作辅助工具，提供结构和内容建议</div>
+                        <div class="tool-link"><a href="https://deepseek.com" target="_blank">deepseek.com</a></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 听力训练 -->
+            <div class="category-card listening">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h2 class="category-title">听力训练</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>BBC Learning English</span>
+                        </div>
+                        <div class="tool-desc">真实新闻报道和节目，配有学习活动和字幕</div>
+                        <div class="tool-link"><a href="https://bbc.co.uk/learningenglish" target="_blank">bbc.co.uk/learningenglish</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-podcast"></i>
+                            <span>EnglishPod</span>
+                        </div>
+                        <div class="tool-desc">带文本的实用日常英语播客课程</div>
+                        <div class="tool-link"><a href="https://englishpod.com" target="_blank">englishpod.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-film"></i>
+                            <span>YouTube学习频道</span>
+                        </div>
+                        <div class="tool-desc">BBC Learning English, Learn English With TV Series等</div>
+                        <div class="tool-link"><a href="https://youtube.com" target="_blank">youtube.com</a></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 词汇扩展 -->
+            <div class="category-card vocab">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h2 class="category-title">词汇扩展</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-flash"></i>
+                            <span>Anki</span>
+                        </div>
+                        <div class="tool-desc">基于间隔重复原理的高效记忆卡片系统</div>
+                        <div class="tool-link"><a href="https://apps.ankiweb.net" target="_blank">apps.ankiweb.net</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-fire"></i>
+                            <span>Memrise</span>
+                        </div>
+                        <div class="tool-desc">通过游戏和真实视频例句学习词汇</div>
+                        <div class="tool-link"><a href="https://www.memrise.com" target="_blank">memrise.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-language"></i>
+                            <span>Vocabulary.com</span>
+                        </div>
+                        <div class="tool-desc">智能词典，根据您的水平创建个性化测验</div>
+                        <div class="tool-link"><a href="https://www.vocabulary.com" target="_blank">vocabulary.com</a></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 阅读理解 -->
+            <div class="category-card reading">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h2 class="category-title">阅读理解</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Newsela</span>
+                        </div>
+                        <div class="tool-desc">根据阅读水平调整难度的新闻文章</div>
+                        <div class="tool-link"><a href="https://newsela.com" target="_blank">newsela.com</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-book"></i>
+                            <span>Project Gutenberg</span>
+                        </div>
+                        <div class="tool-desc">6万+免费电子书，包括经典英语文学作品</div>
+                        <div class="tool-link"><a href="https://gutenberg.org" target="_blank">gutenberg.org</a></div>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-name">
+                            <i class="fas fa-glasses"></i>
+                            <span>Readlang</span>
+                        </div>
+                        <div class="tool-desc">网页阅读工具，点击即可翻译单词并创建学习卡片</div>
+                        <div class="tool-link"><a href="https://readlang.com" target="_blank">readlang.com</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="conclusion">
+            <h2><i class="fas fa-rocket"></i> 您的英语精通之旅现在开始！</h2>
+            <p>通过这些<span class="highlight">革命性工具</span>，您已准备好打破语言障碍，比以往任何时候都更快地达到流利水平！</p>
+            <p>记住：<span class="highlight">坚持胜过天赋</span>，当天赋不坚持时。每天只需投入30分钟使用这些资源，您将见证英语技能的<span class="highlight">惊人转变</span>！</p>
+            
+            <div class="motivation">
+                "语言不是遗传的，它是努力获得的。" — Noam Chomsky
+            </div>
+        </div>
+        
+        <footer>
+            <p>赋能全球语言学习者 | © 2025 英语学习工具大全</p>
+            <p>由语言爱好者精心制作</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年秋季英语六级考试模拟卷</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .exam-info {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .info-item {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .exam-content {
+            padding: 30px 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            border-left: 5px solid var(--secondary);
+            padding: 8px 15px;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+        }
+        
+        .instructions {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .question:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: #ddd;
+        }
+        
+        .q-header {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        
+        .q-number {
+            background: var(--secondary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .q-text {
+            font-weight: 500;
+            padding-top: 5px;
+        }
+        
+        .options {
+            padding-left: 45px;
+        }
+        
+        .option {
+            margin: 10px 0;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option:hover {
+            background: #f0f8ff;
+            border-color: var(--secondary);
+        }
+        
+        .option.selected {
+            background: #e3f2fd;
+            border-color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .chart-container {
+            background: #f9fbfd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e6ed;
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            height: 250px;
+            justify-content: space-around;
+            padding: 0 30px;
+            position: relative;
+        }
+        
+        .chart::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .chart-bar {
+            width: 70px;
+            background: linear-gradient(to top, var(--secondary), #87CEEB);
+            margin: 0 10px;
+            position: relative;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+        
+        .chart-label {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        .chart-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .china-bar {
+            background: linear-gradient(to top, #e74c3c, #eaa29a);
+        }
+        
+        .usa-bar {
+            background: linear-gradient(to top, #3498db, #85c1e9);
+        }
+        
+        .eu-bar {
+            background: linear-gradient(to top, #2ecc71, #82e0aa);
+        }
+        
+        .design-section {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .design-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #fff;
+            position: relative;
+        }
+        
+        .design-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .design-points {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .design-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 300px;
+            min-width: 250px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .design-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .design-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .design-card ul {
+            padding-left: 20px;
+        }
+        
+        .design-card li {
+            margin: 10px 0;
+        }
+        
+        .answers {
+            background: #e8f4f8;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .answers h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .answer-section {
+            margin-bottom: 25px;
+        }
+        
+        .answer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .answer {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--success);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #7f8c8d;
+            background: var(--primary);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .exam-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .info-item {
+                margin: 8px 0;
+            }
+            
+            .chart {
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+            }
+            
+            .chart-bar {
+                width: 80%;
+                height: 70px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            
+            .chart-label {
+                position: static;
+                margin-top: 5px;
+            }
+            
+            .chart-value {
+                position: static;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2025年秋季英语六级考试模拟卷</h1>
+            <div class="subtitle">CET-6 Practice Test Based on Current Trends and Historical Analysis</div>
+            <div class="exam-info">
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>考试时间: 130分钟</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>满分: 710分</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>考试日期: 2025年12月20日</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="exam-content">
+            <!-- Writing Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-pen-fancy"></i>
+                    Part I: Writing (30 minutes)
+                </div>
+                
+                <div class="instructions">
+                    <p><strong>Directions:</strong> For this part, you are allowed 30 minutes to write an essay based on the chart below. You should include:</p>
+                    <ol>
+                        <li>A description of the chart</li>
+                        <li>Analysis of possible reasons behind the trends</li>
+                        <li>Your personal comments</li>
+                    </ol>
+                    <p>Write at least <strong>150 words</strong> but no more than <strong>200 words</strong>.</p>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-title">Global Attitudes Toward AI Adoption (2020-2025)</div>
+                    <div class="chart">
+                        <div class="chart-bar china-bar" style="height: 89%;">
+                            <div class="chart-value">89%</div>
+                            <div class="chart-label">China</div>
+                        </div>
+                        <div class="chart-bar usa-bar" style="height: 72%;">
+                            <div class="chart-value">72%</div>
+                            <div class="chart-label">USA</div>
+                        </div>
+                        <div class="chart-bar eu-bar" style="height: 51%;">
+                            <div class="chart-value">51%</div>
+                            <div class="chart-label">EU</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 40px; color: #666; font-style: italic;">
+                        Data Source: Pew Research Center Global Survey 2025
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="q-text">
+                        <p>Write your essay in the space below (not included in this simulation):</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listening Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-headphones"></i>
+                    Part II: Listening Comprehension (25 minutes)
+                </div>
+                
+                <div class="instructions">
+                    <p><strong>Section A</strong></p>
+                    <p><strong>Directions:</strong> In this section, you will hear news reports. At the end of each news report, you will hear some questions. Both the news report and the questions will be spoken only once.</p>
+                </div>
+                
+                <div class="question">
+                    <div class="q-header">
+                        <div class="q-number">1</div>
+                        <div class="q-text">
+                            <p>What is the primary focus of COP30 as mentioned in the report?</p>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option">A) Establishing new carbon emission targets</div>
+                        <div class="option">B) Funding renewable energy projects in Africa</div>
+                        <div class="option">C) Reviewing progress on Paris Agreement targets</div>
+                        <div class="option">D) Creating international carbon trading standards</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="q-header">
+                        <div class="q-number">2</div>
+                        <div class="q-text">
+                            <p>According to the report, which country pledged carbon neutrality by 2040?</p>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option">A) India</div>
+                        <div class="option">B) Brazil</div>
+                        <div class="option">C) Germany</div>
+                        <div class="option">D) South Korea</div>
+                    </div>
+                </div>
+                
+                <div class="instructions" style="margin-top: 30px;">
+                    <p><strong>Section B</strong></p>
+                    <p><strong>Directions:</strong> In this section, you will hear long conversations. At the end of each conversation, you will hear some questions. Both the conversation and the questions will be spoken only once.</p>
+                </div>
+                
+                <div class="question">
+                    <div class="q-header">
+                        <div class="q-number">5</div>
+                        <div class="q-text">
+                            <p>Why does the student refuse to join the "screen-free challenge"?</p>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option">A) He needs online resources for his thesis</div>
+                        <div class="option">B) He fears missing social media updates</div>
+                        <div class="option">C) His phone is essential for part-time work</div>
+                        <div class="option">D) He doesn't believe in digital detox benefits</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reading Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-book-open"></i>
+                    Part III: Reading Comprehension (40 minutes)
+                </div>
+                
+                <div class="instructions">
+                    <p><strong>Section C: Banked Cloze</strong></p>
+                    <p><strong>Directions:</strong> In this section, there is a passage with ten blanks. You are required to select one word for each blank from a list of choices given in a word bank following the passage.</p>
+                </div>
+                
+                <div class="question">
+                    <div class="q-text">
+                        <p>The concept of neurodiversity, which recognizes neurological differences as natural variations rather than ____, has gained significant attention in recent years. In the workplace, companies are increasingly realizing that cognitive ____ can drive innovation. Employees with autism, ADHD, dyslexia, and other neurodivergent conditions often possess ____ skills such as pattern recognition, attention to detail, and creative problem-solving.</p>
+                        <p>However, traditional hiring processes frequently ____ neurodivergent talent. Many neurodivergent individuals struggle with conventional job interviews that assess social ____ rather than actual job capabilities. To address this, forward-thinking companies are implementing ____ recruitment strategies. These include work trials, skills-based assessments, and providing interview questions in advance.</p>
+                        <p>Creating an inclusive environment also requires workplace ____. Simple adjustments like noise-canceling headphones, flexible workspaces, and clear communication protocols can make a ____ difference. When supported properly, neurodivergent employees not only ____ but often excel in their roles, bringing unique perspectives that enhance team performance and ____ innovation.</p>
+                    </div>
+                </div>
+                
+                <div class="instructions" style="margin-top: 30px;">
+                    <p><strong>Section D: Reading in Depth</strong></p>
+                </div>
+                
+                <div class="question">
+                    <div class="q-header">
+                        <div class="q-number">52</div>
+                        <div class="q-text">
+                            <p>According to the passage on "Phygital Commerce", what is the primary advantage of AR fitting rooms mentioned?</p>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option">A) They increase customer engagement time</div>
+                        <div class="option">B) They reduce product return rates</div>
+                        <div class="option">C) They enable social media sharing</div>
+                        <div class="option">D) They collect valuable consumer data</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Translation Section -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-language"></i>
+                    Part IV: Translation (30 minutes)
+                </div>
+                
+                <div class="instructions">
+                    <p><strong>Directions:</strong> For this part, you are allowed 30 minutes to translate a passage from Chinese into English.</p>
+                </div>
+                
+                <div class="question">
+                    <div class="q-text">
+                        <p>二十四节气是中国古代农耕文明的智慧结晶，通过观察太阳运行划分四季。它不仅指导农业生产，还影响了饮食习俗（如冬至吃饺子）。2016年，二十四节气被列入联合国教科文组织人类非物质文化遗产名录。作为中国传统文化的重要组成部分，二十四节气体现了人与自然和谐相处的哲学思想，至今仍在现代生活中发挥着重要作用。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Design Philosophy -->
+            <div class="design-section">
+                <h2 class="design-title">Exam Design Philosophy</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; line-height: 1.8;">
+                    本模拟卷基于近三年六级考试趋势和2025年社会热点精心设计，重点考察学生在人工智能、可持续发展、心理健康、传统文化等领域的语言应用能力。试卷内容反映当前教育方向从单纯语言技能向跨文化交际和批判性思维的转变。
+                </p>
+                
+                <div class="design-points">
+                    <div class="design-card">
+                        <h3><i class="fas fa-chart-line"></i> 命题趋势分析</h3>
+                        <ul>
+                            <li>写作部分：数据图表+社会现象分析（AI接受度）</li>
+                            <li>听力部分：科技伦理/心理健康/全球议题（COP30）</li>
+                            <li>阅读部分：数字经济/神经多样性/文化传承</li>
+                            <li>翻译部分：中国文化+全球影响力（二十四节气）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="design-card">
+                        <h3><i class="fas fa-lightbulb"></i> 2025热点融合</h3>
+                        <ul>
+                            <li>人工智能全球态度差异（写作）</li>
+                            <li>联合国气候变化大会COP30（听力）</li>
+                            <li>数字健康与屏幕依赖（听力）</li>
+                            <li>神经多样性职场应用（阅读）</li>
+                            <li>线上线下融合商业（阅读）</li>
+                            <li>中国非遗文化国际传播（翻译）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="design-card">
+                        <h3><i class="fas fa-book"></i> 能力考察重点</h3>
+                        <ul>
+                            <li>信息整合与图表分析能力</li>
+                            <li>学术场景听力理解能力</li>
+                            <li>复杂文本批判性阅读能力</li>
+                            <li>文化概念精准翻译能力</li>
+                            <li>社会议题辩证思考能力</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Answers -->
+            <div class="answers">
+                <h2><i class="fas fa-key"></i> 参考答案与解析</h2>
+                
+                <div class="answer-section">
+                    <h3>Part I: Writing</h3>
+                    <div class="answer">
+                        <p><strong>参考范文：</strong></p>
+                        <p>The chart illustrates global attitudes toward AI adoption from 2020 to 2025 across three regions. China shows remarkable acceptance growth (75% to 89%), while the US exhibits modest increase (68% to 72%) and the EU experiences significant decline (62% to 51%).</p>
+                        <p>This divergence stems from multiple factors. China's surge relates to government initiatives like the "AI+" strategy and digital infrastructure development. Conversely, European skepticism reflects privacy concerns under GDPR and job displacement fears. American attitudes remain cautiously optimistic, balancing innovation potential with ethical considerations.</p>
+                        <p>In my view, while AI promises efficiency gains in healthcare and transportation, global cooperation is essential to establish ethical frameworks. The upcoming UN AI Ethics Summit should prioritize transnational standards to ensure responsible development.</p>
+                        <p style="margin-top: 15px; color: #27ae60; font-weight: 500;">【范文解析】1. 清晰描述图表趋势 2. 分析文化政策差异 3. 提出解决方案 4. 使用学术词汇（divergence, skepticism, transnational）</p>
+                    </div>
+                </div>
+                
+                <div class="answer-section">
+                    <h3>Part II: Listening Comprehension</h3>
+                    <div class="answer">
+                        <p><strong>Section A</strong></p>
+                        <p>1. C) Reviewing progress on Paris Agreement targets</p>
+                        <p>2. A) India</p>
+                        <p><strong>Section B</strong></p>
+                        <p>5. B) He fears missing social media updates</p>
+                        <p style="margin-top: 15px; color: #27ae60; font-weight: 500;">【听力原文关键句】: Psychologist: "Digital detox improves mental focus" / Student: "But I can't risk losing followers!"</p>
+                    </div>
+                </div>
+                
+                <div class="answer-section">
+                    <h3>Part III: Reading Comprehension</h3>
+                    <div class="answer">
+                        <p><strong>Banked Cloze</strong></p>
+                        <p>46. disorders | 47. diversity | 48. exceptional | 49. exclude | 50. fluency | 51. alternative | 52. accommodations | 53. substantial | 54. thrive | 55. foster</p>
+                        <p><strong>Reading in Depth</strong></p>
+                        <p>52. B) They reduce product return rates</p>
+                    </div>
+                </div>
+                
+                <div class="answer-section">
+                    <h3>Part IV: Translation</h3>
+                    <div class="answer">
+                        <p><strong>参考译文：</strong></p>
+                        <p>The 24 Solar Terms represent the crystallization of wisdom from ancient Chinese agricultural civilization, dividing seasons through solar observations. They not only guide agricultural production but also influence dietary customs (e.g., consuming dumplings during Winter Solstice). In 2016, they were inscribed on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity. As a vital component of traditional Chinese culture, the 24 Solar Terms embody the philosophical concept of harmonious coexistence between humans and nature, continuing to play significant roles in modern life.</p>
+                        <p style="margin-top: 15px; color: #27ae60; font-weight: 500;">【翻译要点】1. "智慧结晶"→crystallization of wisdom 2. "列入名录"→inscribed on 3. "和谐相处"→harmonious coexistence 4. 文化专有名词准确翻译</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>2025 © English Testing System | 六级考试命题研究中心</p>
+            <p>本模拟卷仅供学习参考，命题设计：深度求索教育研究院</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple option selection
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from siblings
+                this.parentElement.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
