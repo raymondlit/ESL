@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洛阳理工学院大学英语课程 - 新视野第四册第四单元</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+            color: #5a3e36;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(234, 153, 88, 0.15);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #e67e22, #d35400);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f1c40f,
+                #f1c40f 10px,
+                #e67e22 10px,
+                #e67e22 20px
+            );
+        }
+        
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px dashed #f0d9c5;
+        }
+        
+        h2 {
+            color: #e67e22;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0d9c5;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: #e67e22;
+        }
+        
+        h3 {
+            color: #d35400;
+            margin: 20px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            margin: 15px 0 25px 30px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            color: #e67e22;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #fef3e7 0%, #f9e4d0 100%);
+            border-radius: 12px;
+            padding: 25px;
+            flex: 1;
+            min-width: 300px;
+            box-shadow: 0 5px 15px rgba(234, 153, 88, 0.1);
+            border: 1px solid #f0d9c5;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(234, 153, 88, 0.2);
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: #d35400;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+            font-size: 1.6rem;
+        }
+        
+        .timeline {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background: #e67e22;
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            padding-left: 50px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: #f39c12;
+            border-radius: 50%;
+            border: 4px solid #e67e22;
+        }
+        
+        .time {
+            font-weight: bold;
+            color: #d35400;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .activity {
+            background: #fef9f3;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, #fef9f3, #fef3e7);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px solid #f0d9c5;
+        }
+        
+        .highlight-title {
+            text-align: center;
+            color: #d35400;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .pill {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0 5px 5px 0;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #e67e22, #d35400);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                min-width: 100%;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">洛阳理工学院</div>
+            <h1>大学英语课程教学设计</h1>
+            <div class="subtitle">新视野大学英语（第四版）第四册 · 第四单元 · 智能制造专业专项设计</div>
+            <div class="header-decoration"></div>
+        </header>
+        
+        <div class="content-section">
+            <h2>课程基本信息</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-title">📚 教学对象</div>
+                    <p>智能制造专业大二下学期学生</p>
+                    <p>学生特点：具备基础英语能力，对专业技术有浓厚兴趣，需要提升专业英语应用能力</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">🎯 教学目标</div>
+                    <ul>
+                        <li>掌握智能制造相关专业英语词汇和表达方式</li>
+                        <li>通过英语输入理解智能制造的核心概念</li>
+                        <li>运用英语输出实现专业知识的内化</li>
+                        <li>激发学习动力，培养专业英语应用能力</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">📖 教材内容</div>
+                    <p>新视野大学英语（第四版）第四册 第四单元</p>
+                    <p>主题：Technology and Innovation（技术与创新）</p>
+                    <p>结合智能制造专业进行内容拓展和深化</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>教学设计理论基础</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-title">🧠 认知心理学应用</div>
+                    <ul>
+                        <li>激活先验知识：通过专业相关话题激活学生认知图式</li>
+                        <li>组块化教学：将语言知识与专业内容结合成有意义组块</li>
+                        <li>双重编码：结合语言输入与视觉化专业内容呈现</li>
+                        <li>间隔重复：关键术语在不同教学环节反复出现</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">🗣️ 语言教学特点</div>
+                    <ul>
+                        <li>内容与语言整合学习法（CLIL）</li>
+                        <li>任务型语言教学（TBLT）</li>
+                        <li>专业英语教学（ESP）原则</li>
+                        <li>输入假说与输出假说结合</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title">教学策略核心</div>
+                <p style="text-align: center; font-size: 1.3rem; margin-bottom: 20px;">"以英语输入为渠道传递知识，以英语输出为手段内化知识"</p>
+                <div style="text-align: center;">
+                    <span class="pill">专业相关性</span>
+                    <span class="pill">认知参与</span>
+                    <span class="pill">情境化学习</span>
+                    <span class="pill">输出驱动</span>
+                    <span class="pill">多模态输入</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>第一学时教学设计（45分钟）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">0-10分钟：情境导入与词汇预热</div>
+                    <div class="activity">
+                        <h3>智能制造场景头脑风暴</h3>
+                        <ul>
+                            <li>展示智能工厂图片/视频，引导学生用英语描述观察内容</li>
+                            <li>分组竞赛：收集与智能制造相关的英语词汇（IoT, automation, robotics等）</li>
+                            <li>教师引入本课核心词汇，通过视觉化方式呈现专业术语</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">10-25分钟：专业内容输入与理解</div>
+                    <div class="activity">
+                        <h3>聚焦阅读：技术革新的驱动力</h3>
+                        <ul>
+                            <li>指导性阅读教材第四单元Text A，聚焦智能制造相关内容</li>
+                            <li>Jigsaw阅读策略：每组负责文章不同部分，提取关键信息</li>
+                            <li>设计专业导向问题："How does the text relate to smart manufacturing?"</li>
+                            <li>认知脚手架：提供专业术语表辅助理解</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">25-40分钟：知识加工与初步输出</div>
+                    <div class="activity">
+                        <h3>概念映射与专业应用</h3>
+                        <ul>
+                            <li>小组合作创建"智能制造关键技术"概念图（英语标注）</li>
+                            <li>角色扮演：工程师向管理层解释一项智能制造技术</li>
+                            <li>句式支架："This technology enhances... by..."</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">40-45分钟：总结与衔接</div>
+                    <div class="activity">
+                        <h3>反思与预告</h3>
+                        <ul>
+                            <li>学生分享一个课堂上学到的新概念</li>
+                            <li>布置探索性任务：调研一项中国智能制造创新案例（英语资源）</li>
+                            <li>预告下节课主题：智能制造中的技术伦理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>第二学时教学设计（45分钟）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">0-10分钟：案例连接与听力输入</div>
+                    <div class="activity">
+                        <h3>智能制造案例分析与听力训练</h3>
+                        <ul>
+                            <li>学生分享调研的中国智能制造案例（英语摘要）</li>
+                            <li>听力练习：智能制造领域的TED演讲片段（带专业术语指导）</li>
+                            <li>听力任务：提取演讲中的问题-解决方案框架</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">10-25分钟：批判性思维与专业讨论</div>
+                    <div class="activity">
+                        <h3>技术伦理辩论准备</h3>
+                        <ul>
+                            <li>基于教材内容和听力材料，提出智能制造伦理问题</li>
+                            <li>分组立场：支持方 vs 反对方（技术失业、数据隐私等）</li>
+                            <li>提供专业表达支架："From an engineering perspective..."</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">25-35分钟：结构化输出与展示</div>
+                    <div class="activity">
+                        <h3>微型辩论与解决方案提出</h3>
+                        <ul>
+                            <li>分组进行7分钟结构化辩论</li>
+                            <li>辩论后各组提出平衡解决方案</li>
+                            <li>焦点句型："To mitigate this issue, we propose..."</li>
+                            <li>同伴评价与教师反馈</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">35-45分钟：知识整合与迁移</div>
+                    <div class="activity">
+                        <h3>反思写作与行动规划</h3>
+                        <ul>
+                            <li>个人反思写作："As a future smart manufacturing engineer..."</li>
+                            <li>分享关键观点，形成班级"智能制造伦理宣言"</li>
+                            <li>延伸项目：设计智能制造创新方案（英语报告框架）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>教学评估与反馈机制</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-title">📝 形成性评估</div>
+                    <ul>
+                        <li>课堂参与度与小组贡献观察量表</li>
+                        <li>专业词汇应用准确性检查</li>
+                        <li>概念图与思维导图评价</li>
+                        <li>辩论表现与解决方案创新性评分</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">🔄 反馈策略</div>
+                    <ul>
+                        <li>即时口语反馈（重述、拓展学生表达）</li>
+                        <li>同伴反馈指南（基于量表的互评）</li>
+                        <li"数字化反馈：录音回放与自我评估</li>
+                        <li>专业表达提升建议（结合工程沟通特点）</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">💡 差异化教学</div>
+                    <ul>
+                        <li>分层任务：基础组、进阶组、挑战组</li>
+                        <li"多元智能任务选择（视觉型、动觉型等）</li>
+                        <li>专业背景知识补偿材料</li>
+                        <li>扩展资源库：专业期刊、行业报告等</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>洛阳理工学院 · 外国语学院 · 大学英语教学部</p>
+            <p>教学设计：基于新视野大学英语（第四版）第四册第四单元 · 智能制造专业专项设计</p>
+            <p>© 2025 洛阳理工学院 - 融合专业特色的英语教学模式探索</p>
+        </footer>
+    </div>
+</body>
+</html>
